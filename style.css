@@ -1,0 +1,2864 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+
+    background-image:
+        url("grand3_1920x1080.png");
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   NO DARK OVERLAY
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background: transparent;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    background: transparent;
+
+    overflow: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* =========================================================
+   INFO PANEL
+========================================================= */
+
+.info-panel {
+    position: absolute;
+
+    left: 80px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #fff;
+
+    max-width: 450px;
+
+    z-index: 2;
+}
+
+.info-panel h1 {
+    font-size: 48px;
+
+    margin-bottom: 15px;
+}
+
+.info-panel p {
+    color: #d5d5d5;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-text {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 2;
+
+    color:
+        rgba(252, 252, 242, 0.55);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.hero-text h1 {
+    font-size: 70px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p {
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    color: #ffd000;
+
+    margin-top: 10px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.top-left-brand {
+    position: fixed;
+
+    top: 20px;
+    left: 30px;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    z-index: 9999;
+
+    color:
+        rgb(240, 245, 209);
+
+    text-transform: uppercase;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.top-left-brand h1 {
+    font-size: 25px;
+}
+
+.top-left-brand p {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color:
+        rgb(240, 245, 209);
+
+    margin-top: 4px;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+}
+
+
+/* =========================================================
+   TOP MENU
+========================================================= */
+
+.top-center-menu {
+    position: fixed;
+
+    top: 50px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    gap: 10px;
+
+    z-index: 9999;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.top-center-menu button {
+    width: 100px;
+    height: 39px;
+
+    background: #000;
+
+    color: #bbc3f9;
+
+    border:
+        1px solid #2c2c2c;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.top-center-menu button:hover {
+    background: #ffd000;
+
+    color: #000;
+
+    border-color: #ffd000;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   JOIN NOW
+========================================================= */
+
+.open-login {
+    position: fixed;
+
+    top: 70px;
+    right: 100px;
+
+    width: 150px;
+    height: 48px;
+
+    background: #ffd000;
+
+    color: #000;
+
+    border: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+    z-index: 9999;
+}
+
+.open-login:hover {
+    background: #ffb300;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   DOWNLOAD APK
+========================================================= */
+
+.download-apk {
+    position: absolute;
+
+    bottom: 130px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    height: 40px;
+
+    padding:
+        0 32px;
+
+    background: #ffd000;
+
+    color: #000;
+
+    border: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    transition: 0.2s;
+}
+
+.download-apk:hover {
+    background: #ffb300;
+
+    transform:
+        translateX(-50%)
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   LOGIN OVERLAY
+========================================================= */
+
+.login-box::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    backdrop-filter:
+        blur(4px);
+
+    -webkit-backdrop-filter:
+        blur(4px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: -2;
+}
+
+
+/* =========================================================
+   LOGIN BOX
+   MODERN GRAND RP STYLE
+========================================================= */
+
+/* =========================================================
+   LOGIN BOX - WHITE BACKGROUND
+========================================================= */
+
+.login-box {
+    position: fixed;
+
+    top: 50%;
+    right: 60px;
+
+    transform:
+        translateY(-50%)
+        translateX(30px)
+        scale(0.96);
+
+    width: 360px;
+
+    min-height: 430px;
+
+    padding:
+        38px 34px 34px;
+
+    /* WHITE BACKGROUND */
+    background: #ffffff;
+
+    /* REMOVE YELLOW BORDER */
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    border-radius: 16px;
+
+    /* DARK TEXT */
+    color: #111111;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 99999;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   NO TOP YELLOW LINE
+========================================================= */
+
+/* DELETE .login-box::after completely */
+
+
+/* =========================================================
+   LOGIN SHOW
+========================================================= */
+
+.login-box.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(-50%)
+        translateX(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   LOGIN HEADER
+========================================================= */
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    font-size: 26px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #111111;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    font-size: 12px;
+
+    color: rgba(0, 0, 0, 0.55);
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   FALLBACK H2
+========================================================= */
+
+.login-box > h2 {
+    font-size: 26px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #111111;
+
+    text-transform: uppercase;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   INPUT BOX
+========================================================= */
+
+.input-box {
+    position: relative;
+
+    margin: 0 0 20px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-box input {
+    width: 100%;
+
+    height: 54px;
+
+    padding: 0 16px;
+
+    background: #f5f5f5;
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.15);
+
+    border-radius: 9px;
+
+    color: #111111;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.input-box input::placeholder {
+    color: rgba(0, 0, 0, 0.40);
+}
+
+
+/* =========================================================
+   INPUT HOVER
+========================================================= */
+
+.input-box input:hover {
+    border-color:
+        rgba(0, 0, 0, 0.25);
+
+    background: #f8f8f8;
+}
+
+
+/* =========================================================
+   INPUT FOCUS - WHITE/BLACK
+========================================================= */
+
+.input-box input:focus {
+    background: #ffffff;
+
+    border-color: #111111;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.input-box label {
+    display: block;
+
+    text-align: left;
+
+    margin:
+        7px 0 0 3px;
+
+    font-size: 10px;
+
+    color:
+        rgba(0, 0, 0, 0.60);
+
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON - YELLOW
+========================================================= */
+
+.login-box button {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd21f,
+            #ffb900
+        );
+
+    color: #111111;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 22px
+        rgba(255, 210, 31, 0.16);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON HOVER
+========================================================= */
+
+.login-box button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #ffe45c,
+            #ffc400
+        );
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(255, 210, 31, 0.25);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON ACTIVE
+========================================================= */
+
+.login-box button:active {
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   CONTENT ABOVE
+========================================================= */
+
+.login-box > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LOGIN BOTTOM DECORATION
+========================================================= */
+
+.login-box {
+    isolation: isolate;
+}
+
+
+.login-box > * {
+    position: relative;
+
+    z-index: 2;
+}
+.reward-popup {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.92);
+
+    width: 460px;
+
+    max-width:
+        calc(100% - 40px);
+
+    padding:
+        42px 35px 35px;
+
+    background:
+        rgba(8, 10, 9, 0.97);
+
+    border:
+        1px solid
+        rgba(255, 210, 31, 0.35);
+
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.75),
+
+        0 0 35px
+        rgba(255, 210, 31, 0.08);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    overflow: hidden;
+
+    z-index: 999999;
+}
+
+
+/* =========================================================
+   SHOW POPUP
+========================================================= */
+
+.reward-popup.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+========================================================= */
+
+.loading-spinner {
+    width: 58px;
+    height: 58px;
+
+    margin:
+        0 auto 25px;
+
+    border:
+        4px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-top:
+        4px solid
+        #ffd21f;
+
+    border-right:
+        4px solid
+        rgba(255, 210, 31, 0.45);
+
+    border-radius: 50%;
+
+    animation:
+        rewardSpin
+        0.8s
+        linear
+        infinite;
+
+    box-shadow:
+        0 0 18px
+        rgba(255, 210, 31, 0.12);
+}
+
+
+/* =========================================================
+   SPINNER ANIMATION
+========================================================= */
+
+@keyframes rewardSpin {
+
+    0% {
+        transform:
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   THANK YOU TITLE
+========================================================= */
+
+.reward-popup h2 {
+    margin:
+        0 0 12px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #ffffff;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN MESSAGE
+========================================================= */
+
+.reward-popup p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.reward-popup .note {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-text {
+    margin-top: 22px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   COUNTDOWN NUMBER
+========================================================= */
+
+.countdown-text span {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 30px;
+
+    height: 30px;
+
+    margin:
+        0 4px;
+
+    border-radius: 6px;
+
+    background:
+        rgba(255, 210, 31, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 210, 31, 0.25);
+
+    color:
+        #ffd21f;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ANIMATED LOADING LINE
+========================================================= */
+
+.reward-popup::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15%;
+
+    bottom: 0;
+
+    width: 70%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffd21f,
+            transparent
+        );
+
+    animation:
+        loadingLine
+        1.5s
+        ease-in-out
+        infinite;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   LOADING LINE ANIMATION
+========================================================= */
+
+@keyframes loadingLine {
+
+    0% {
+        transform:
+            translateX(-60%);
+
+        opacity: 0.15;
+    }
+
+    50% {
+        transform:
+            translateX(0%);
+
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateX(60%);
+
+        opacity: 0.15;
+    }
+
+}
+
+
+/* =========================================================
+   BONUS TEXT
+========================================================= */
+
+.bonus-text {
+    position: absolute;
+
+    top: 62%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 10;
+}
+
+.bonus-text p {
+    font-size: 15px;
+
+    color: #f5f5f5;
+
+    line-height: 1.5;
+}
+
+.bonus-text span {
+    color: #ffd000;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SHOP SECTION
+========================================================= */
+
+.shop-section {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: -500px;
+
+    min-height: auto;
+
+    padding:
+        45px 30px
+        70px;
+}
+
+
+/* =========================================================
+   SHOP CONTAINER
+========================================================= */
+
+.shop-container {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SHOP HEADER
+========================================================= */
+
+.shop-header {
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+.shop-header h1 {
+    font-size: 42px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    color: #e8e8e8;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 2px 12px
+        rgba(0, 0, 0, 0.6);
+}
+
+.shop-header p {
+    color: #bdbdbd;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SHOP CATEGORY
+========================================================= */
+
+.shop-category {
+    margin-bottom: 22px;
+}
+
+.shop-category h2 {
+    font-size: 22px;
+
+    color: #eeeeee;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+
+    padding-left: 14px;
+
+    border-left:
+        3px solid #4e765d;
+}
+
+
+/* =========================================================
+   SERVER + NICKNAME ROW
+========================================================= */
+
+/* =========================================================
+   SERVER + NICKNAME ROW
+========================================================= */
+
+.shop-input-row {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin:
+        0 auto 32px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    /* IMPORTANT FOR DROPDOWN */
+    position: relative;
+
+    z-index: 1000;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   SERVER BOX
+========================================================= */
+
+/* =========================================================
+   SERVER BOX
+========================================================= */
+
+.server-box {
+    flex: 1 1 0;
+
+    width: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    /* IBABA ANG SERVER SECTION */
+    transform: translateY(30px);
+
+    position: relative;
+
+    z-index: 1001;
+}
+
+.server-box h2 {
+    display: inline-block;
+
+    color: #fff;
+
+    padding: 7px 12px;
+
+    border-radius: 4px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   SERVER DROPDOWN
+========================================================= */
+
+/* =========================================================
+   SERVER DROPDOWN
+========================================================= */
+
+.server-dropdown {
+    position: relative;
+
+    margin-bottom: 5px;
+
+    width: 100%;
+
+    z-index: 1002;
+
+    overflow: visible;
+}
+
+.server-selected {
+    width: 100%;
+
+    height: 58px;
+
+    padding:
+        0 18px;
+
+    background:
+        rgba(20, 22, 21, 0.94);
+
+    border:
+        1px solid #4b504d;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #eeeeee;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease;
+}
+
+.server-selected:hover {
+    border-color:
+        #718879;
+}
+
+.server-flag {
+    width: 30px;
+
+    height: 20px;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+
+    display: block;
+}
+
+.server-arrow {
+    margin-left: auto;
+
+    font-size: 18px;
+
+    color: #aaaaaa;
+
+    transition:
+        transform .2s ease;
+}
+
+.server-dropdown.open .server-arrow {
+    transform:
+        rotate(180deg);
+}
+
+
+/* =========================================================
+   SERVER LIST
+========================================================= */
+
+.server-list {
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 5px);
+
+    left: 0;
+
+    width: 100%;
+
+    background: #151917;
+
+    border: 1px solid #454b48;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    z-index: 999999;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.65);
+}
+
+.server-dropdown.open .server-list {
+    display: block;
+}
+.server-item {
+    width: 100%;
+
+    height: 43px;
+
+    padding:
+        0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #d8d8d8;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        color .15s ease;
+}
+
+.server-item:hover {
+    background:
+        #252b28;
+
+    color:
+        #ffffff;
+}
+
+.server-item img {
+    width: 30px;
+
+    height: 20px;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   NICKNAME BOX
+========================================================= */
+
+.nickname-box {
+    flex:
+        1 1 0;
+
+    width: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    /* IBABA DIN ANG NICKNAME SECTION */
+    transform: translateY(25px);
+}
+
+.nickname-box h2 {
+    display: inline-block;
+
+    color: #fff;
+
+    padding: 7px 12px;
+
+    border-radius: 4px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    letter-spacing: .5px;
+}
+
+.nickname-box input {
+    width: 100%;
+
+    height: 58px;
+
+    padding:
+        0 18px;
+
+    background:
+        rgba(20, 22, 21, 0.94);
+
+    border:
+        1px solid #4b504d;
+
+    border-radius: 7px;
+
+    color: #eeeeee;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition:
+        border-color .2s ease;
+}
+
+.nickname-box input::placeholder {
+    color: #777b79;
+}
+
+.nickname-box input:focus {
+    border-color:
+        #718879;
+}
+
+
+/* =========================================================
+   SHOP GRID
+========================================================= */
+
+.shop-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   SHOP CARDS
+========================================================= */
+
+.shop-card,
+.coin-card {
+    position: relative;
+
+    min-height: 200px;
+
+    padding:
+        30px 18px 62px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 25, 22, 0.38),
+            rgba(22, 27, 24, 0.55)
+        ),
+        url("coins.png");
+
+    background-repeat:
+        no-repeat;
+
+    background-position:
+        center center;
+
+    background-size:
+        cover;
+
+    border:
+        1px solid #505653;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.55);
+
+    transition:
+        transform .30s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   COIN IMAGE
+========================================================= */
+
+.coin-image {
+    width: 34px;
+
+    height: 40px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.shop-card > *,
+.coin-card > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.shop-card:hover,
+.coin-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #718879;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.coin-title {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 10px;
+}
+
+.coin-title h3 {
+    margin: 0;
+
+    font-size: 20px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   VIP / STARTER / OTHER
+========================================================= */
+
+.vip-card p,
+.starter-card p,
+.other-card p {
+    color: #c5c9c7;
+
+    font-size: 13px;
+
+    margin-bottom: 17px;
+
+    text-shadow:
+        0 2px 6px
+        rgba(0, 0, 0, 0.8);
+}
+
+.vip-card {
+    border-color:
+        #555a57;
+}
+
+.starter-card {
+    border-color:
+        #555a57;
+}
+
+
+/* =========================================================
+   COIN VALUE
+========================================================= */
+
+.coin-value {
+    font-size: 42px;
+
+    font-weight: 800;
+
+    color: #d9e0dc;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, .9);
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.price {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #f2f2f2;
+
+    margin-bottom: 16px;
+
+    text-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   OLD PRICE
+========================================================= */
+
+.old-price {
+    color: #999e9b;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    text-decoration: line-through;
+
+    margin-bottom: 7px;
+
+    text-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, .9);
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+.save {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    color: #b9c8bf;
+
+    background: black;
+
+    border:
+        1px solid
+        rgba(115, 135, 123, .55);
+
+    border-radius: 5px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 1px 3px
+        rgba(0, 0, 0, .8);
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.shop-badge,
+.popular-badge,
+.value-badge {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    padding:
+        5px 8px;
+
+    border-radius: 5px;
+
+    background:
+        #52685a;
+
+    color: #f0f0f0;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    box-shadow:
+        0 0 10px
+        rgba(0, 0, 0, .25);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   SPECIAL CARDS
+========================================================= */
+
+.popular,
+.best-value {
+    border-color:
+        #66736b;
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   BUY BUTTON
+========================================================= */
+
+.buy-button {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    height: 52px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius:
+        0 0 8px 8px;
+
+    background:
+        #ffd21f;
+
+    color:
+        #111;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.buy-button:hover {
+    background:
+        #ffe45c;
+
+    box-shadow:
+        0 -3px 12px
+        rgba(255, 210, 31, .25);
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.shop-terms {
+    margin-top: 28px;
+
+    padding:
+        20px 24px;
+
+    border-top:
+        1px solid #505653;
+
+    text-align: center;
+
+    color: #858b88;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.shop-terms p {
+    margin-bottom: 6px;
+}
+
+.shop-terms strong {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HIDE TOP ELEMENTS ON SCROLL
+========================================================= */
+
+body.scrolled .top-left-brand,
+body.scrolled .top-center-menu,
+body.scrolled .open-login,
+body.scrolled .hero-text {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP ELEMENT ANIMATIONS
+========================================================= */
+
+body.scrolled .top-left-brand {
+    transform:
+        translateY(-30px);
+}
+
+body.scrolled .top-center-menu {
+    transform:
+        translate(-50%, -30px);
+}
+
+body.scrolled .open-login {
+    transform:
+        translateY(-30px);
+}
+
+body.scrolled .hero-text {
+    transform:
+        translate(-50%, -60%);
+}
+
+
+/* =========================================================
+   HERO HIDE CLASS
+========================================================= */
+
+.hero-section.hide-hero {
+    opacity: 0;
+
+    transform:
+        translateY(-50px);
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        width: 100%;
+
+        background-image:
+            url("grand3_1920x1080.png");
+
+        background-position:
+            center center;
+
+        background-size:
+            auto 100vh;
+
+        background-attachment:
+            fixed;
+
+        background-repeat:
+            no-repeat;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero-section {
+        height: 100vh;
+
+        min-height: 600px;
+
+        background: transparent;
+    }
+
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    .top-left-brand {
+        top: 15px;
+
+        left: 18px;
+    }
+
+    .top-left-brand h1 {
+        font-size: 22px;
+    }
+
+    .top-left-brand p {
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* =====================================================
+       TOP MENU
+    ===================================================== */
+
+    .top-center-menu {
+        top: 70px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+
+        display: flex;
+
+        gap: 8px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        width: 95%;
+    }
+
+    .top-center-menu button {
+        width: 90px;
+
+        height: 36px;
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       JOIN
+    ===================================================== */
+
+    .open-login {
+        top: 18px;
+
+        right: 18px;
+
+        width: 110px;
+
+        height: 40px;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       HERO TEXT
+    ===================================================== */
+
+    .hero-text {
+        top: 45%;
+
+        left: 50%;
+
+        width: 90%;
+
+        transform:
+            translate(-50%, -50%);
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+
+        line-height: 1.1;
+    }
+
+    .hero-text p {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+        margin-top: 6px;
+    }
+
+
+    /* =====================================================
+       DOWNLOAD
+    ===================================================== */
+
+    .download-apk {
+        position: absolute;
+
+        left: 50%;
+
+        bottom: 85px;
+
+        transform:
+            translateX(-50%);
+
+        width: 85%;
+
+        max-width: 300px;
+
+        height: 40px;
+
+        padding: 0;
+
+        font-size: 14px;
+
+        border-radius: 8px;
+    }
+
+
+    /* =====================================================
+       LOGIN MOBILE
+    ===================================================== */
+
+    .login-box {
+        top: 50%;
+
+        left: 50%;
+
+        right: auto;
+
+        width: calc(100% - 32px);
+
+        max-width: 370px;
+
+        min-height: auto;
+
+        padding:
+            32px 24px 26px;
+
+        border-radius: 15px;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.96);
+    }
+
+    .login-box.show {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+
+    /* =====================================================
+       LOGIN HEADER MOBILE
+    ===================================================== */
+
+    .login-header {
+        margin-bottom: 25px;
+    }
+
+    .login-header h2,
+    .login-box > h2 {
+        font-size: 22px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 7px;
+    }
+
+    .login-header p {
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       INPUT MOBILE
+    ===================================================== */
+
+    .input-box {
+        margin-bottom: 17px;
+    }
+
+  .input-box input {
+    width: 100%;
+    height: 50px;
+
+    font-size: 14px;
+
+    /* NORMAL LEFT SPACE */
+    padding: 0 14px;
+
+    box-sizing: border-box;
+}
+    .input-box label {
+        font-size: 9px;
+
+        margin-top: 6px;
+    }
+
+
+    /* =====================================================
+       BUTTON MOBILE
+    ===================================================== */
+
+    .login-box button {
+        height: 50px;
+
+        margin-top: 6px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       REWARD POPUP MOBILE
+    ===================================================== */
+
+    .reward-popup {
+        width: 90%;
+
+        max-width: 360px;
+
+        padding:
+            35px 22px 28px;
+
+        border-radius: 13px;
+    }
+
+    .loading-spinner {
+        width: 52px;
+
+        height: 52px;
+
+        margin-bottom: 21px;
+
+        border-width: 4px;
+    }
+
+    .reward-popup h2 {
+        font-size: 18px;
+
+        line-height: 1.4;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 10px;
+    }
+
+    .reward-popup p {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+    .reward-popup .note {
+        font-size: 12px;
+
+        margin-top: 7px;
+    }
+
+    .countdown-text {
+        margin-top: 18px;
+
+        padding-top: 14px;
+
+        font-size: 12px;
+    }
+
+    .countdown-text span {
+        min-width: 28px;
+
+        height: 28px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       INFO
+    ===================================================== */
+
+    .info-panel {
+        display: none;
+    }
+
+
+    /* =====================================================
+       SHOP MOBILE
+    ===================================================== */
+
+    .shop-section {
+        width: 100%;
+
+        padding:
+            30px 20px 45px;
+
+        /* NORMAL SHOP POSITION */
+        margin-top: -420x;
+
+        display: block;
+
+        overflow: visible;
+
+        position: relative;
+
+        z-index: 20;
+    }
+
+
+    /* =====================================================
+       SHOP CONTAINER
+    ===================================================== */
+
+    .shop-container {
+        width: 100%;
+
+        max-width: 560px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    /* =====================================================
+       SHOP HEADER
+    ===================================================== */
+
+    .shop-header {
+        width: 100%;
+
+        margin:
+            0 auto 26px;
+
+        text-align: center;
+    }
+
+    .shop-header h1 {
+        font-size: 28px;
+
+        letter-spacing: 2px;
+
+        text-align: center;
+    }
+
+    .shop-header p {
+        font-size: 12px;
+
+        line-height: 1.6;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       SHOP CATEGORY
+    ===================================================== */
+
+    .shop-category {
+        width: 100%;
+
+        margin:
+            0 auto 22px;
+    }
+
+    .shop-category h2 {
+        font-size: 18px;
+
+        margin-bottom: 12px;
+
+        color: #eeeeee;
+    }
+
+
+    /* =====================================================
+       SERVER + NICKNAME
+    ===================================================== */
+
+    .shop-input-row {
+        width: 100%;
+
+        max-width: 560px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0 !important;
+
+        margin:
+            0 auto 10px !important;
+
+        padding: 0 !important;
+
+        position: relative;
+
+        z-index: 1000;
+
+        overflow: visible !important;
+    }
+
+
+    /* =====================================================
+       SERVER BOX
+    ===================================================== */
+
+    .server-box {
+        width: 100%;
+
+        flex: none;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        transform: none;
+
+        position: relative;
+
+        /* ABOVE NICKNAME */
+        z-index: 100;
+    }
+
+
+    /* =====================================================
+       NICKNAME BOX
+    ===================================================== */
+
+    .nickname-box {
+        width: 100%;
+
+        flex: none;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        transform: none;
+
+        position: relative;
+
+        /* BELOW SERVER */
+        z-index: 1;
+
+        margin-top: 0 !important;
+    }
+
+
+    /* =====================================================
+       SERVER / NICKNAME LABEL
+    ===================================================== */
+
+    .server-box h2,
+    .nickname-box h2 {
+        display: block;
+
+        width: fit-content;
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        margin:
+            0 0 2px 0 !important;
+
+        padding: 0 !important;
+
+        line-height: 1.2;
+    }
+
+
+    /* =====================================================
+       SERVER DROPDOWN
+    ===================================================== */
+
+    .server-dropdown {
+        position: relative;
+
+        width: 100%;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        z-index: 1000;
+
+        overflow: visible !important;
+    }
+
+
+    /* =====================================================
+       SERVER SELECTED
+    ===================================================== */
+
+    .server-selected {
+        width: 100%;
+
+        height: 54px;
+
+        padding:
+            0 16px;
+
+        background:
+            rgba(20, 22, 21, 0.94);
+
+        border:
+            1px solid #4b504d;
+
+        border-radius: 7px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        color: #eeeeee;
+
+        font-size: 15px;
+    }
+
+    .server-selected:hover {
+        border-color:
+            #718879;
+    }
+
+
+    /* =====================================================
+       SERVER FLAG
+    ===================================================== */
+
+    .server-flag {
+        width: 30px;
+
+        height: 20px;
+
+        object-fit: cover;
+
+        border-radius: 2px;
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       SERVER ARROW
+    ===================================================== */
+
+    .server-arrow {
+        margin-left: auto;
+
+        font-size: 17px;
+
+        color: #aaaaaa;
+    }
+
+
+    /* =====================================================
+       SERVER LIST
+    ===================================================== */
+
+    .server-list {
+        display: none;
+
+        position: absolute;
+
+        top:
+            calc(100% + 4px);
+
+        left: 0;
+
+        width: 100%;
+
+        background:
+            #151917;
+
+        border:
+            1px solid #454b48;
+
+        border-radius: 7px;
+
+        max-height: 250px;
+
+        /* SCROLLABLE */
+        overflow-y: auto;
+
+        /* HIDE SCROLLBAR */
+        scrollbar-width: none;
+
+        -ms-overflow-style: none;
+
+        z-index: 999999;
+
+        box-shadow:
+            0 10px 25px
+            rgba(0, 0, 0, 0.65);
+    }
+
+
+    /* =====================================================
+       HIDDEN SCROLLBAR
+       CHROME / EDGE / SAFARI
+    ===================================================== */
+
+    .server-list::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* =====================================================
+       OPEN DROPDOWN
+    ===================================================== */
+
+    .server-dropdown.open {
+        z-index: 999999;
+    }
+
+    .server-dropdown.open .server-list {
+        display: block;
+
+        z-index: 999999;
+    }
+
+
+    /* =====================================================
+       SERVER ITEM
+    ===================================================== */
+
+    .server-item {
+        width: 100%;
+
+        height: 44px;
+
+        padding:
+            0 14px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        color: #d8d8d8;
+
+        font-size: 14px;
+
+        cursor: pointer;
+
+        transition:
+            background .15s ease,
+            color .15s ease;
+    }
+
+    .server-item:hover {
+        background:
+            #252b28;
+
+        color:
+            #ffffff;
+    }
+
+    .server-item img {
+        width: 30px;
+
+        height: 20px;
+
+        object-fit: cover;
+
+        border-radius: 2px;
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       NICKNAME / TO DEPOSIT
+    ===================================================== */
+
+    .nickname-box input {
+        width: 100%;
+
+        height: 54px;
+
+        margin: 0 !important;
+
+        padding:
+            0 16px;
+
+        background:
+            rgba(20, 22, 21, 0.94);
+
+        border:
+            1px solid #4b504d;
+
+        border-radius: 7px;
+
+        color: #eeeeee;
+
+        outline: none;
+
+        font-size: 15px;
+
+        transition:
+            border-color .2s ease,
+            background .2s ease;
+    }
+
+    .nickname-box input::placeholder {
+        color:
+            #777b79;
+    }
+
+    .nickname-box input:focus {
+        border-color:
+            #718879;
+    }
+
+
+    /* =====================================================
+       MOBILE CARDS
+    ===================================================== */
+
+    .shop-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 8px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .shop-card,
+    .coin-card {
+        width: 100%;
+
+        min-height: 180px;
+
+        height: 180px;
+
+        padding:
+            15px 12px 42px;
+
+        margin: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE TITLE
+    ===================================================== */
+
+    .shop-card h3,
+    .coin-card h3 {
+        font-size: 19px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* =====================================================
+       MOBILE COIN VALUE
+    ===================================================== */
+
+    .coin-value {
+        font-size: 30px;
+
+        color:
+            #d9e0dc;
+    }
+
+
+    /* =====================================================
+       MOBILE PRICE
+    ===================================================== */
+
+    .price {
+        font-size: 23px;
+    }
+
+
+    /* =====================================================
+       MOBILE BUY BUTTON
+    ===================================================== */
+
+    .buy-button {
+        height: 50px;
+
+        border-radius:
+            0 0 9px 9px;
+
+        font-size: 19px;
+    }
+
+
+    /* =====================================================
+       MOBILE TERMS
+    ===================================================== */
+
+    .shop-terms {
+        width: 100%;
+
+        padding:
+            18px 10px;
+
+        margin:
+            25px auto 0;
+
+        text-align: center;
+
+        color:
+            #ffffff;
+
+        font-size: 15px;
+    }
+
+    .shop-terms strong {
+        color:
+            #ffffff;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    .login-box {
+        width:
+            calc(100% - 24px);
+
+        padding:
+            28px 20px 24px;
+    }
+
+    .login-header h2,
+    .login-box > h2 {
+        font-size: 20px;
+    }
+
+    .input-box input {
+        height: 48px;
+
+        font-size: 13px;
+    }
+
+    .login-box button {
+        height: 48px;
+
+        font-size: 12px;
+    }
+
+    .shop-section {
+        padding-left: 16px;
+
+        padding-right: 16px;
+    }
+}
