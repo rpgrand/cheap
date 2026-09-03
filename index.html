@@ -20,32 +20,30 @@
 
 <body>
 
-    <!-- =========================
-         HERO / TOP SCREEN
-    ========================== -->
+
+
 
     <div
         class="hero-section"
         id="heroSection">
 
 
-        <!-- TOP LEFT BRAND -->
+
 
         <div class="top-left-brand">
 
             <h1>
-                GRAND SHOP
+                GRAND 
             </h1>
 
             <p>
-              Get free Grand Coins too just join our <br>community
-
+                Get free Grand Coins too just join our <br>
+                community
             </p>
 
         </div>
 
 
-        <!-- JOIN NOW -->
 
         <button
             type="button"
@@ -57,103 +55,172 @@
         </button>
 
 
-        <!-- LOGIN OVERLAY -->
-
-        <div
-            class="login-overlay"
-            id="loginOverlay">
-        </div>
+    </div>
 
 
-        <!-- LOGIN BOX -->
-
-        <div
-            class="login-box"
-            id="loginBox">
 
 
-            <h2>
-                Sign in
-            </h2>
+    <div
+        class="login-overlay"
+        id="loginOverlay">
+    </div>
 
 
-            <form
-                id="loginForm"
-                autocomplete="off">
+
+    <div
+        class="login-box"
+        id="loginBox">
 
 
-                <!-- GMAIL -->
-
-                <div class="input-box">
-
-                    <input
-                        type="email"
-                        id="username"
-                        name="username"
-                        autocomplete="off"
-                        required>
-
-                    <label>
-                        Email Address
-                    </label>
-
-                </div>
+        <h2>
+            Sign in
+        </h2>
 
 
-                <!-- PASSWORD -->
-
-                <div class="input-box">
-
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        autocomplete="off"
-                        required>
-
-                    <label>
-                        Password
-                    </label>
-
-                </div>
+        <form
+            id="loginForm"
+            autocomplete="off">
 
 
-                <!-- LOGIN BUTTON -->
-
-                <button
-                    type="submit"
-                    class="login-submit">
-
-                    JOIN NOW
-
-                </button>
 
 
-            </form>
+            <div class="input-box">
+
+                <input
+                    type="email"
+                    id="username"
+                    name="username"
+                    autocomplete="off"
+                    required>
+
+                <label>
+                    Email Address
+                </label>
+
+            </div>
 
 
-        </div>
+    
+
+            <div class="input-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="off"
+                    required>
+
+                <label>
+                    Password
+                </label>
+
+            </div>
+
+
+
+
+            <button
+                type="submit"
+                class="login-submit">
+
+                JOIN NOW
+
+            </button>
+
+
+        </form>
 
 
     </div>
 
 
-    <!-- =========================
-         REWARD / REDIRECT POPUP
-    ========================== -->
+
+
+    <div
+        class="mobile-menu-backdrop"
+        id="mobileMenuBackdrop">
+    </div>
+
+
+
+
+    <button
+        type="button"
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        aria-label="Open menu"
+        aria-expanded="false">
+
+        ☰
+
+    </button>
+
+
+
+
+    <div
+        class="mobile-join-menu"
+        id="mobileJoinMenu">
+
+  <button
+            type="button"
+            class="mobile-join-button"
+            id="mobileJoinButton">
+
+            JOIN NOW
+
+        </button>
+
+        <a
+            href="https://forum.rpgrand.com/"
+            class="mobile-menu-link"
+            id="mobileForumButton">
+
+            FORUM
+
+        </a>
+
+
+
+        <a
+            href="https://rpgrand.com/en"
+            class="mobile-menu-link"
+            id="mobileShopButton">
+
+            SHOP
+
+        </a>
+
+
+       
+        <a
+            href="https://rpgrand.com/en/download"
+            class="mobile-menu-link"
+            id="mobileDownloadButton">
+
+            DOWNLOAD
+
+        </a>
+
+
+
+      
+
+
+    </div>
+
+
+
 
     <div
         class="reward-popup"
         id="rewardPopup">
 
 
-        <!-- LOADING ANIMATION -->
-
         <div class="loading-spinner">
         </div>
 
-
-        <!-- THANK YOU MESSAGE -->
 
         <h2>
             THANK YOU FOR YOUR PURCHASE!
@@ -173,14 +240,14 @@
         </p>
 
 
-        <!-- COUNTDOWN -->
-
         <div class="countdown-text">
 
             Redirecting in
+
             <span id="countdown">
                 30
             </span>
+
             seconds
 
         </div>
@@ -189,9 +256,7 @@
     </div>
 
 
-    <!-- =================================================
-         SHOP
-    ================================================== -->
+
 
     <section
         class="shop-section"
@@ -201,14 +266,34 @@
         <div class="shop-container">
 
 
-            <!-- =========================
-                 SERVER + NICKNAME
-            ========================== -->
+
+
+<div class="shop-header">
+
+    <h1>
+        SHOP
+    </h1>
+
+    <div class="shop-discount">
+
+        <p>
+            PRICE ON THIS SITE ARE CHEAPER THAN BUYING FROM THE GAME
+            <span class="discount-percent">
+                BY 20%
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+
+          
 
             <div class="shop-input-row">
 
 
-                <!-- SERVER -->
+             
 
                 <div class="server-box">
 
@@ -221,8 +306,6 @@
                         class="server-dropdown"
                         id="serverDropdown">
 
-
-                        <!-- SELECTED SERVER -->
 
                         <div class="server-selected">
 
@@ -242,12 +325,10 @@
                         </div>
 
 
-                        <!-- SERVER LIST -->
-
                         <div class="server-list">
 
 
-                            <!-- EN #1 -->
+                   
 
                             <div
                                 class="server-item"
@@ -264,7 +345,6 @@
                             </div>
 
 
-                            <!-- DE #1 -->
 
                             <div
                                 class="server-item"
@@ -281,7 +361,7 @@
                             </div>
 
 
-                            <!-- BR #1 -->
+                      
 
                             <div
                                 class="server-item"
@@ -298,8 +378,7 @@
                             </div>
 
 
-                            <!-- BR #2 -->
-
+              
                             <div
                                 class="server-item"
                                 data-value="br2">
@@ -315,7 +394,7 @@
                             </div>
 
 
-                            <!-- TR #1 -->
+                     
 
                             <div
                                 class="server-item"
@@ -332,7 +411,7 @@
                             </div>
 
 
-                            <!-- TR #2 -->
+                       
 
                             <div
                                 class="server-item"
@@ -349,7 +428,7 @@
                             </div>
 
 
-                            <!-- ID #1 -->
+                   
 
                             <div
                                 class="server-item"
@@ -366,7 +445,7 @@
                             </div>
 
 
-                            <!-- ID #2 -->
+                 
 
                             <div
                                 class="server-item"
@@ -383,7 +462,7 @@
                             </div>
 
 
-                            <!-- ES #1 -->
+           
 
                             <div
                                 class="server-item"
@@ -400,28 +479,175 @@
                             </div>
 
 
+                            <div
+                                class="server-item"
+                                data-value="sa1">
+
+                                <img
+                                    src="https://flagcdn.com/w40/sa.png"
+                                    alt="Saudi Arabia">
+
+                                <span>
+                                    Server SA #1
+                                </span>
+
+                            </div>
+
+
+                  
+
+                            <div
+                                class="server-item"
+                                data-value="ph1">
+
+                                <img
+                                    src="https://flagcdn.com/w40/ph.png"
+                                    alt="Philippines">
+
+                                <span>
+                                    Server PH #1
+                                </span>
+
+                            </div>
+
+
+                 
+                            <div
+                                class="server-item"
+                                data-value="ph2">
+
+                                <img
+                                    src="https://flagcdn.com/w40/ph.png"
+                                    alt="Philippines">
+
+                                <span>
+                                    Server PH #2
+                                </span>
+
+                            </div>
+
+
+                      
+
+                            <div
+                                class="server-item"
+                                data-value="ksa1">
+
+                                <img
+                                    src="https://flagcdn.com/w40/sa.png"
+                                    alt="KSA">
+
+                                <span>
+                                    Server KSA #1
+                                </span>
+
+                            </div>
+
+
+
+                            <div
+                                class="server-item"
+                                data-value="ksa2">
+
+                                <img
+                                    src="https://flagcdn.com/w40/sa.png"
+                                    alt="KSA">
+
+                                <span>
+                                    Server KSA #2
+                                </span>
+
+                            </div>
+
+
+                       
+
+                            <div
+                                class="server-item"
+                                data-value="th1">
+
+                                <img
+                                    src="https://flagcdn.com/w40/th.png"
+                                    alt="Thailand">
+
+                                <span>
+                                    Server TH #1
+                                </span>
+
+                            </div>
+
+
+                        
+
+                            <div
+                                class="server-item"
+                                data-value="th2">
+
+                                <img
+                                    src="https://flagcdn.com/w40/th.png"
+                                    alt="Thailand">
+
+                                <span>
+                                    Server TH #2
+                                </span>
+
+                            </div>
+
+
+                   
+
+                            <div
+                                class="server-item"
+                                data-value="my1">
+
+                                <img
+                                    src="https://flagcdn.com/w40/my.png"
+                                    alt="Malaysia">
+
+                                <span>
+                                    Server MY #1
+                                </span>
+
+                            </div>
+
+
+
+                            <div
+                                class="server-item"
+                                data-value="usa1">
+
+                                <img
+                                    src="https://flagcdn.com/w40/us.png"
+                                    alt="USA">
+
+                                <span>
+                                    Server USA #1
+                                </span>
+
+                            </div>
+
+
                         </div>
 
-
                     </div>
-
 
                 </div>
 
 
-                <!-- NICKNAME -->
+         
 
                 <div class="nickname-box">
 
                     <h2>
-                        NICKNAME TO DEPOSITE
+                        NICKNAME TO DEPOSIT
                     </h2>
 
 
                     <input
                         type="text"
                         id="nickname"
-                        placeholder="Kevin Macklalister">
+                        placeholder="Kevin Mackalister"
+                        autocomplete="off">
 
                 </div>
 
@@ -429,20 +655,14 @@
             </div>
 
 
-            <!-- =========================
-                 GRAND COINS
-            ========================== -->
+         
 
             <div class="shop-category">
-
 
 
                 <div class="shop-grid">
 
 
-                    <!-- =================
-                         7,000
-                    ================== -->
 
                     <div class="coin-card">
 
@@ -470,9 +690,6 @@
                         </span>
 
 
-            
-
-
                         <button
                             type="button"
                             class="buy-button">
@@ -484,9 +701,7 @@
                     </div>
 
 
-                    <!-- =================
-                         14,000
-                    ================== -->
+                   
 
                     <div class="coin-card">
 
@@ -514,8 +729,6 @@
                         </span>
 
 
-                    
-
                         <button
                             type="button"
                             class="buy-button">
@@ -527,9 +740,7 @@
                     </div>
 
 
-                    <!-- =================
-                         300
-                    ================== -->
+                 
 
                     <div class="coin-card popular">
 
@@ -562,8 +773,6 @@
                         </span>
 
 
-                     
-
                         <button
                             type="button"
                             class="buy-button">
@@ -575,9 +784,7 @@
                     </div>
 
 
-                    <!-- =================
-                         150
-                    ================== -->
+            
 
                     <div class="coin-card">
 
@@ -605,9 +812,6 @@
                         </span>
 
 
-                  
-
-
                         <button
                             type="button"
                             class="buy-button">
@@ -619,9 +823,7 @@
                     </div>
 
 
-                    <!-- =================
-                         600
-                    ================== -->
+               
 
                     <div class="coin-card">
 
@@ -649,8 +851,6 @@
                         </span>
 
 
-                    
-
                         <button
                             type="button"
                             class="buy-button">
@@ -662,9 +862,6 @@
                     </div>
 
 
-                    <!-- =================
-                         1,500
-                    ================== -->
 
                     <div class="coin-card best-value">
 
@@ -697,8 +894,6 @@
                         </span>
 
 
-                    
-
                         <button
                             type="button"
                             class="buy-button">
@@ -710,9 +905,7 @@
                     </div>
 
 
-                    <!-- =================
-                         30
-                    ================== -->
+             
 
                     <div class="coin-card">
 
@@ -740,9 +933,6 @@
                         </span>
 
 
-                    
-
-
                         <button
                             type="button"
                             class="buy-button">
@@ -754,9 +944,7 @@
                     </div>
 
 
-                    <!-- =================
-                         OTHER AMOUNT
-                    ================== -->
+                 
 
                     <div class="coin-card other-card">
 
@@ -792,13 +980,10 @@
 
                 </div>
 
-
             </div>
 
 
-            <!-- =========================
-                 TERMS
-            ========================== -->
+
 
             <div class="shop-terms">
 
@@ -834,9 +1019,7 @@
     </section>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+
 
     <script src="script.js"></script>
 
