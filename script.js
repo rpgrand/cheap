@@ -52,12 +52,13 @@ if (!username.toLowerCase().endsWith("@gmail.com")) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =================================================
-       LOGIN ELEMENTS
-    ================================================= */
+
 
     const loginBtn =
         document.querySelector(".open-login");
+
+    const openLoginButton =
+        document.getElementById("openLoginButton");
 
     const loginBox =
         document.getElementById("loginBox");
@@ -68,51 +69,64 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginForm =
         document.getElementById("loginForm");
 
+    const mobileMenuButton =
+        document.getElementById("mobileMenuButton");
 
-    /* =================================================
-       OPEN LOGIN
-    ================================================= */
+    const mobileJoinMenu =
+        document.getElementById("mobileJoinMenu");
+
+    const mobileJoinButton =
+        document.getElementById("mobileJoinButton");
+
+    const serverDropdown =
+        document.getElementById("serverDropdown");
+
+
+
 
     function openLogin() {
 
-        if (!loginBox) return;
+        if (mobileJoinMenu) {
+            mobileJoinMenu.classList.remove("show");
+        }
 
-        loginBox.classList.add("show");
+        if (mobileMenuButton) {
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+
+        document.body.classList.remove("menu-open");
+
+
+        if (loginBox) {
+            loginBox.classList.add("show");
+        }
 
         if (loginOverlay) {
             loginOverlay.classList.add("show");
         }
 
         document.body.classList.add("login-open");
-
     }
 
 
-    /* =================================================
-       CLOSE LOGIN
-    ================================================= */
-
     function closeLogin() {
 
-        if (!loginBox) return;
-
-        loginBox.classList.remove("show");
+        if (loginBox) {
+            loginBox.classList.remove("show");
+        }
 
         if (loginOverlay) {
             loginOverlay.classList.remove("show");
         }
 
         document.body.classList.remove("login-open");
-
     }
 
 
-    /* =================================================
-       JOIN NOW BUTTON
-       
-       CLICK 1 = OPEN
-       CLICK 2 = CLOSE
-    ================================================= */
+
 
     if (loginBtn) {
 
@@ -122,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 event.preventDefault();
                 event.stopPropagation();
-
 
                 if (
                     loginBox &&
@@ -143,13 +156,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =================================================
-       ALL BUY BUTTONS
-    ================================================= */
+    if (openLoginButton) {
+
+        openLoginButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                openLogin();
+
+            }
+        );
+
+    }
+
+
+
 
     const buyButtons =
         document.querySelectorAll(".buy-button");
-
 
     buyButtons.forEach(function (button) {
 
@@ -168,45 +195,101 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =================================================
-       CLICK OUTSIDE LOGIN = CLOSE
-    ================================================= */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            if (!loginBox) return;
 
 
-            if (
-                loginBox.classList.contains("show")
-            ) {
+    if (mobileMenuButton) {
 
-                /*
-                    Huwag isara kung:
-                    - nasa login box
-                    - nasa JOIN NOW button
-                */
+        mobileMenuButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
 
                 if (
-                    !loginBox.contains(event.target) &&
-                    !loginBtn?.contains(event.target)
+                    loginBox &&
+                    loginBox.classList.contains("show")
                 ) {
 
                     closeLogin();
+                    return;
+
+                }
+
+
+                if (!mobileJoinMenu) {
+                    return;
+                }
+
+
+                const isOpen =
+                    mobileJoinMenu.classList.contains("show");
+
+
+
+                if (isOpen) {
+
+                    mobileJoinMenu.classList.remove(
+                        "show"
+                    );
+
+                    document.body.classList.remove(
+                        "menu-open"
+                    );
+
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+
+
+                else {
+
+                    mobileJoinMenu.classList.add(
+                        "show"
+                    );
+
+                    document.body.classList.add(
+                        "menu-open"
+                    );
+
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
 
                 }
 
             }
+        );
 
-        }
-    );
+    }
 
 
-    /* =================================================
-       LOGIN OVERLAY CLICK = CLOSE
-    ================================================= */
+
+
+    if (mobileJoinButton) {
+
+        mobileJoinButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                openLogin();
+
+            }
+        );
+
+    }
+
+
+
 
     if (loginOverlay) {
 
@@ -222,30 +305,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =================================================
-       ESC KEY = CLOSE LOGIN
-    ================================================= */
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    if (loginBox) {
 
-            if (event.key === "Escape") {
+        loginBox.addEventListener(
+            "click",
+            function (event) {
 
-                closeLogin();
+                event.stopPropagation();
 
             }
+        );
 
-        }
-    );
+    }
 
 
-    /* =================================================
-       LOGIN FORM
-       
-       DEMO ONLY
-       Does not process real credentials/payment.
-    ================================================= */
 
     if (loginForm) {
 
@@ -254,6 +328,61 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 event.preventDefault();
+
+
+                const username =
+                    document.getElementById("username");
+
+                const password =
+                    document.getElementById("password");
+
+
+                if (!username || !password) {
+                    return;
+                }
+
+
+                const email =
+                    username.value.trim();
+
+                const pass =
+                    password.value.trim();
+
+
+              
+
+                if (email === "") {
+
+                    alert(
+                        "Please enter your email."
+                    );
+
+                    username.focus();
+
+                    return;
+
+                }
+
+
+
+                if (pass === "") {
+
+                    alert(
+                        "Please enter your password."
+                    );
+
+                    password.focus();
+
+                    return;
+
+                }
+
+
+                console.log(
+                    "Login:",
+                    email
+                );
+
 
                 closeLogin();
 
@@ -265,10 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =================================================
-       REWARD LOADING
-       30 SECOND COUNTDOWN
-    ================================================= */
+
 
     function startRewardLoading() {
 
@@ -279,18 +405,18 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("countdown");
 
 
-        if (!rewardPopup) return;
+        if (!rewardPopup) {
+            return;
+        }
 
 
         let seconds = 30;
 
 
-        /* SHOW POPUP */
+        rewardPopup.classList.add(
+            "show"
+        );
 
-        rewardPopup.classList.add("show");
-
-
-        /* INITIAL COUNTDOWN */
 
         if (countdown) {
 
@@ -300,8 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* CLEAR PREVIOUS TIMER */
-
         if (window.rewardTimer) {
 
             clearInterval(
@@ -310,8 +434,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
-        /* START COUNTDOWN */
 
         window.rewardTimer =
             setInterval(
@@ -328,23 +450,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
 
-                    /* =========================
-                       COUNTDOWN FINISHED
-                    ========================== */
-
                     if (seconds <= 0) {
 
                         clearInterval(
                             window.rewardTimer
                         );
 
-
-                        /*
-                            Redirect to account page.
-                        */
-
                         window.location.href =
-                            "account.html";
+                            "index.html";
 
                     }
 
@@ -355,14 +468,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =================================================
-       SERVER DROPDOWN
-    ================================================= */
-
-    const serverDropdown =
-        document.getElementById(
-            "serverDropdown"
-        );
 
 
     if (serverDropdown) {
@@ -372,15 +477,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 ".server-selected"
             );
 
+        const serverList =
+            serverDropdown.querySelector(
+                ".server-list"
+            );
+
         const serverItems =
             serverDropdown.querySelectorAll(
                 ".server-item"
             );
 
 
-        /* ---------------------------------------------
-           OPEN / CLOSE SERVER DROPDOWN
-        --------------------------------------------- */
+      
 
         if (serverSelected) {
 
@@ -392,9 +500,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     event.stopPropagation();
 
 
-                    serverDropdown.classList.toggle(
-                        "open"
-                    );
+                    const isOpen =
+                        serverDropdown.classList.contains(
+                            "open"
+                        );
+
+
+                    if (isOpen) {
+
+                        serverDropdown.classList.remove(
+                            "open"
+                        );
+
+                    } else {
+
+                        serverDropdown.classList.add(
+                            "open"
+                        );
+
+                    }
 
                 }
             );
@@ -402,9 +526,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* ---------------------------------------------
-           SELECT SERVER
-        --------------------------------------------- */
 
         serverItems.forEach(
             function (item) {
@@ -425,17 +546,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                         const selectedImage =
-                            serverSelected?.querySelector(
-                                ".server-flag"
-                            );
+                            serverSelected
+                                ? serverSelected.querySelector(
+                                    ".server-flag"
+                                )
+                                : null;
+
 
                         const selectedName =
-                            serverSelected?.querySelector(
-                                "span:nth-child(2)"
-                            );
+                            serverSelected
+                                ? serverSelected.querySelector(
+                                    "span:not(.server-arrow)"
+                                )
+                                : null;
 
 
-                        /* CHANGE FLAG */
+                    
 
                         if (
                             itemImage &&
@@ -445,10 +571,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             selectedImage.src =
                                 itemImage.src;
 
+                            selectedImage.alt =
+                                itemImage.alt || "";
+
                         }
 
 
-                        /* CHANGE SERVER NAME */
+                   
 
                         if (
                             itemName &&
@@ -456,18 +585,18 @@ document.addEventListener("DOMContentLoaded", function () {
                         ) {
 
                             selectedName.textContent =
-                                itemName.textContent;
+                                itemName.textContent.trim();
 
                         }
 
 
-                        /* SAVE SELECTED SERVER */
+                  
 
                         serverDropdown.dataset.value =
                             item.dataset.value || "";
 
 
-                        /* CLOSE DROPDOWN */
+                    
 
                         serverDropdown.classList.remove(
                             "open"
@@ -480,51 +609,82 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* ---------------------------------------------
-           CLICK OUTSIDE SERVER DROPDOWN
-        --------------------------------------------- */
 
-        document.addEventListener(
-            "click",
-            function (event) {
 
-                if (
-                    !serverDropdown.contains(
-                        event.target
-                    )
-                ) {
+        if (serverList) {
 
-                    serverDropdown.classList.remove(
-                        "open"
-                    );
+            serverList.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
 
                 }
+            );
 
-            }
-        );
+        }
 
     }
 
 
-    /* =================================================
-       SCROLL EFFECT
-    ================================================= */
 
-    window.addEventListener(
-        "scroll",
-        function () {
 
-            if (window.scrollY > 100) {
+    document.addEventListener(
+        "click",
+        function (event) {
 
-                document.body.classList.add(
-                    "scrolled"
+
+       
+
+            if (
+                serverDropdown &&
+                !serverDropdown.contains(event.target)
+            ) {
+
+                serverDropdown.classList.remove(
+                    "open"
                 );
 
-            } else {
+            }
+
+
+         
+
+            if (
+                mobileJoinMenu &&
+                mobileMenuButton &&
+                mobileJoinMenu.classList.contains("show") &&
+                !mobileJoinMenu.contains(event.target) &&
+                !mobileMenuButton.contains(event.target)
+            ) {
+
+                mobileJoinMenu.classList.remove(
+                    "show"
+                );
+
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
                 document.body.classList.remove(
-                    "scrolled"
+                    "menu-open"
                 );
+
+            }
+
+
+       
+
+            if (
+                loginBox &&
+                loginBox.classList.contains("show") &&
+                !loginBox.contains(event.target) &&
+                !loginBtn?.contains(event.target) &&
+                !openLoginButton?.contains(event.target)
+            ) {
+
+                closeLogin();
 
             }
 
@@ -532,4 +692,119 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+
+          
+
+            if (serverDropdown) {
+
+                serverDropdown.classList.remove(
+                    "open"
+                );
+
+            }
+
+
+
+            if (mobileJoinMenu) {
+
+                mobileJoinMenu.classList.remove(
+                    "show"
+                );
+
+            }
+
+
+            if (mobileMenuButton) {
+
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+
+          
+
+            closeLogin();
+
+        }
+    );
+
+
+
+
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            const currentScrollY =
+                window.scrollY;
+
+
+ 
+
+            if (currentScrollY <= 100) {
+
+                document.body.classList.remove(
+                    "scrolled"
+                );
+
+            }
+
+
+
+            else {
+
+                document.body.classList.add(
+                    "scrolled"
+                );
+
+            }
+
+
+            lastScrollY =
+                currentScrollY;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+
 });
+
+
+
+function hideMobileMenuOnPC() {
+    const mobileMenu = document.getElementById("mobileJoinMenu");
+    const mobileButton = document.getElementById("mobileMenuButton");
+
+    if (!mobileMenu || !mobileButton) return;
+
+    if (window.innerWidth > 768) {
+        mobileMenu.style.setProperty("display", "none", "important");
+        mobileButton.style.setProperty("display", "none", "important");
+    }
+}
+
+window.addEventListener("load", hideMobileMenuOnPC);
+window.addEventListener("resize", hideMobileMenuOnPC);
