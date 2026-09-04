@@ -5332,10 +5332,10 @@ body.scrolled .mobile-menu-button {
 }
 
 
-@media screen and (min-width: 361px) and (max-width: 480px) {
+@media screen and (max-width: 380px) and (max-aspect-ratio: 9/20) {
 
     .shop-section {
-        margin-top: -550px !important;
+        margin-top: -450px !important;
     }
 
 }
