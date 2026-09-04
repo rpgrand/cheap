@@ -5335,7 +5335,7 @@ body.scrolled .mobile-menu-button {
 @media screen and (max-width: 380px) and (max-aspect-ratio: 9/20) {
 
     .shop-section {
-        margin-top: -450px !important;
+        margin-top: -500px !important;
     }
 
 }
