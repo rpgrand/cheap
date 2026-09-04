@@ -5330,3 +5330,12 @@ body.scrolled .mobile-menu-button {
     }
 
 }
+
+
+@media screen and (min-width: 361px) and (max-width: 480px) {
+
+    .shop-section {
+        margin-top: -550px !important;
+    }
+
+}
