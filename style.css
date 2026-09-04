@@ -9,36 +9,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    min-height: 100vh;
-    width: 100%;
-
-    background-image:
-        url("grand3_1920x1080.png");
-
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    position: relative;
-}
-
-body::before {
-    content: "";
-
-    position: fixed;
-    inset: 0;
-
-    background: transparent;
-
-    pointer-events: none;
-
-    z-index: 1;
-}
 
 .hero-section {
     position: relative;
@@ -56,6 +26,11 @@ body::before {
         transform 0.35s ease,
         visibility 0.35s ease;
 }
+
+
+/* =========================================================
+   INFO PANEL
+========================================================= */
 
 .info-panel {
     position: absolute;
@@ -83,6 +58,11 @@ body::before {
 
     line-height: 1.7;
 }
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
 
 .hero-text {
     position: absolute;
@@ -119,7 +99,6 @@ body::before {
         0 5px 20px
         rgba(0, 0, 0, 0.7);
 }
-
 .hero-text p {
     font-size: 18px;
 
@@ -2005,13 +1984,7 @@ body {
     min-height: 100vh;
     width: 100%;
 
-    background-image:
-        url("grand3_1920x1080.png");
-
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: #000;
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -2019,16 +1992,36 @@ body {
     position: relative;
 }
 
+
+
+
 body::before {
     content: "";
 
     position: fixed;
-    inset: 0;
+    inset: -6px;
 
-    background: transparent;
+    background-image:
+        url("grand3_1920x1080.png");
 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+
+    transform: scale(1.01);
+
+    z-index: 0;
     pointer-events: none;
+}
 
+
+
+
+body > * {
+    position: relative;
     z-index: 1;
 }
 
@@ -5238,7 +5231,7 @@ body.scrolled .mobile-menu-button {
                 15px;
 
             margin-top:
-                -535px;
+                -450px;
         }
 
         .shop-header h1 {
